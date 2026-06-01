@@ -1,0 +1,20 @@
+*.swp
+__pycache__/**
+out/
+core*
+*.ipynb
+# *.sh
+*.bin
+wandb
+backup
+*.pth
+#*.txt
+log/
+*.json
+*.xlsx
+*.mp4
+tools/*.jpg
+tools/*.mp4
+# pre_training.py is used by stage1/2 scripts in this repo
+# (keep it tracked for reproducibility)
+# pre_training.py

@@ -1,0 +1,30 @@
+# Python caches
+__pycache__/
+*.pyc
+
+# Runtime outputs
+*.log
+nohup.out
+out/
+runs/
+
+# Model and dataset artifacts
+dataset/
+pretrained_weight/
+hf/
+triton/
+*.pth
+*.onnx
+*.bin
+*.pkl
+Uni-Sign/data/CSL_News/CSL_News_Labels.json
+
+# Local environments
+.venv/
+venv/
+.conda/
+
+# Notebook and IDE
+.ipynb_checkpoints/
+.vscode/
+.idea/
