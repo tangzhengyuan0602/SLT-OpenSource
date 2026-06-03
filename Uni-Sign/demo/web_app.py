@@ -67,7 +67,12 @@ import utils as utils
 from online_inference import get_runtime_device, load_model, predict_video, load_pose_file
 
 
-DEFAULT_CHECKPOINT = os.environ.get("UNISIGN_CHECKPOINT", "")
+DEFAULT_CHECKPOINT = os.path.join(
+    _UNI_SIGN_ROOT,
+    "runs",
+    "a10_stage3_poseonly_cecsl_20260508_1351",
+    "best_checkpoint.pth",
+)
 DEFAULT_SAMPLE_VIDEO_DIR = os.path.join(
     _UNI_SIGN_ROOT,
     "dataset",
@@ -1568,7 +1573,7 @@ def render_page(result: str = "", error: str = "", filename: str = "", pose_vide
 class UniSignWebService:
     def __init__(self, args):
         self.args = args
-        if not self.args.finetune and DEFAULT_CHECKPOINT and os.path.exists(DEFAULT_CHECKPOINT):
+        if not self.args.finetune:
             self.args.finetune = DEFAULT_CHECKPOINT
         utils.set_seed(self.args.seed)
         self.model = load_model(self.args)
